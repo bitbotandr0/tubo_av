@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Bienvenido a youtube download version 1.0"
+echo "Bienvenido a youtube download version 1.0 Operativo solo para TERMUX"
 
 sleep 1
 
@@ -65,7 +65,6 @@ read URL
 
 echo "Descargando Video"
 
-cd /data/data/com.termux/files/home/down
 
 echo "youtube-dl"     $URL
 
@@ -79,7 +78,6 @@ youtube-dl $URL
 
  echo "descargando"
 
-cd /data/data/com.termux/files/home/down
 
 echo "youtube-dl --extract-audio --audio-format mp3"  $URL
 
@@ -94,7 +92,7 @@ youtube-dl --extract-audio --audio-format mp3  $URL
 
 *) sleep 1
 
-   echo "no joda, meta bien el dedo"
+   echo "ups! opción no válida, intente de nuevo"
 
    sleep 2
 
@@ -112,14 +110,14 @@ elif [[ $opc == y ]] || [[ $opc == Y ]]
 
 then
 
-   apt update || sudo apt update ; apt upgrade ; sudo apt upgrade -y
+   apt update && apt upgrade -y
 
-   apt install || sudo apt install ffmpeg -y
+   apt install ffmpeg -y
 
-   apt install python || sudo apt install python -y ; apt install python 2 || sudo apt install python 2 -y ; apt install python 3 || sudo apt install python 3  -y
+   apt install python  -y ; apt  install python 2 -y ; apt install python 3 -y
 
 
-   pip3 install youtube-dl || sudo apt install python3-pip
+   pip3 install youtube-dl ||  apt install python3-pip
 
 
 
@@ -146,7 +144,6 @@ read URL
 
           echo "descargando video"
 
-           cd /data/data/com.termux/files/home/down
 
 echo "youtube-dl"     $URL
 
@@ -162,7 +159,6 @@ read URL
 
 sleep 1
 
-           cd /data/data/com.termux/files/home/down
 
 
 echo "youtube-dl --extract-audio --audio-format mp3"  $URL
